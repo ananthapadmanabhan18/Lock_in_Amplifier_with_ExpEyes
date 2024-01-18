@@ -32,7 +32,7 @@ N_div=64
 
 
 
-p.set_sine_amp(1)
+p.set_sine_amp(0)
 p.set_sine(1000)
 time,input=collect_signal('A2',N_sample,N_div,f)
 
