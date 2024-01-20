@@ -19,24 +19,20 @@ def LIA(V_in,t_in,f):
 
 def collect_signal(stri,N_sample,N_div,f):
     try:
+        t_gap = (1/(f*N_div))*10**6 #us
+        t,v = p.capture1(stri,N_sample,t_gap)
+        return t/1000,v
+    except:
         import eyes17.eyes
         p=eyes17.eyes.open()
         t_gap = (1/(f*N_div))*10**6 #us
         t,v = p.capture1(stri,N_sample,t_gap)
         return t/1000,v
-    except:
-        t_gap = (1/(f*N_div))*10**6 #us
-        t,v = p.capture1(stri,N_sample,t_gap)
-        return t/1000,v
-
-
 
 
 f=1000 #Hz
 N_sample = 8192
 N_div=64
-
-
 
 p.set_sine_amp(0)
 p.set_sine(1000)
