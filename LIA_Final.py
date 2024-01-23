@@ -19,32 +19,35 @@ def LIA(V_in,t_in,f):   #V_in is the input voltage, t_in is the time list (in S)
 
 #################### function to collect the signal from Expeyes ###########################
 def collect_signal(stri,N_sample,N_div,f):
-    try:
-        t_gap = (1/(f*N_div))*10**6 #us
-        t,v = p.capture1(stri,N_sample,t_gap)
-        return t/1000,v
-    except:
-        import eyes17.eyes
-        p=eyes17.eyes.open()
         t_gap = (1/(f*N_div))*10**6 #us
         t,v = p.capture1(stri,N_sample,t_gap)
         return t/1000,v
 ############################################################################################
 
-#################### Defining the freqency and smpling info ################################
-f=1000 #Hz
-N_sample = 8192
-N_div=64
-############################################################################################
-p.set_sine_amp(0)
-p.set_sine(1000)
-time,input=collect_signal('A2',N_sample,N_div,f)
+
+f=1000
+N_sample=8192
+N_div=128
 
 
-print("The output voltage is",LIA(input,time,f),"V")
+# fn=lambda x: 3*np.sin(2*np.pi*f*x)
+# p.load_equation(function=fn,span=[0,2*np.pi])
+t_in,V_in=collect_signal('A1',N_sample,N_div,f)
+
+
+
+V_DC = LIA(V_in,t_in,f)
+print("The output voltage is",V_DC,"V")
+
+
+#open LIA.txt
+
+with open('LIA.txt', 'a') as file:
+    file.write(str(V_DC)+'\n')
+
 
 
 # import matplotlib.pyplot as plt
-# plt.plot(time,input)
-# plt.xlim(0,0.001)
+# plt.plot(t_in,V_in)
+# plt.xlim(0,0.005)
 # plt.show()
