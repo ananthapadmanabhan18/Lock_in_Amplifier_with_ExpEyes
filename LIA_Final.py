@@ -29,25 +29,35 @@ f=1000
 N_sample=8192
 N_div=128
 
+p.set_sine_amp(2)
+p.set_sine(f)
 
-# fn=lambda x: 3*np.sin(2*np.pi*f*x)
-# p.load_equation(function=fn,span=[0,2*np.pi])
 t_in,V_in=collect_signal('A1',N_sample,N_div,f)
+t_out_opamp,V_out_opamp=collect_signal('A2',N_sample,N_div,f)
 
 
 
-V_DC = LIA(V_in,t_in,f)
+
+#RMS of V_in and t_in list
+V_in_rms = np.sqrt(np.mean(np.square(V_in)))
+print("The RMS of the input voltage is",V_in_rms,"V")
+
+
+
+
+V_DC = LIA(V_out_opamp,t_out_opamp,f)
 print("The output voltage is",V_DC,"V")
-
+V_DC=V_DC/np.sqrt(2)
 
 #open LIA.txt
 
 with open('LIA.txt', 'a') as file:
-    file.write(str(V_DC)+'\n')
+    file.write(str(V_in_rms)+"\t"+str(V_DC)+"\n")
 
 
 
 # import matplotlib.pyplot as plt
 # plt.plot(t_in,V_in)
+# plt.plot(t_out_opamp,V_out_opamp)
 # plt.xlim(0,0.005)
 # plt.show()
