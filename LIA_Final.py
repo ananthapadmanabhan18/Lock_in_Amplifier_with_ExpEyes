@@ -25,7 +25,7 @@ def collect_signal(stri,N_sample,N_div,f):
 ############################################################################################
 
 
-f=1000
+f=500
 N_sample=8192
 N_div=128
 
@@ -51,7 +51,7 @@ V_DC=V_DC/np.sqrt(2)
 
 #open LIA.txt
 
-with open('LIA.txt', 'a') as file:
+with open(f'C:\\Users\\parsh\\OneDrive\\Documents\\sem 8\\open lab\\Integrated_Lab_II\\Data\\CAL_dat_{f}Hz.txt','a') as file:
     file.write(str(V_in_rms)+"\t"+str(V_DC)+"\n")
 
 
