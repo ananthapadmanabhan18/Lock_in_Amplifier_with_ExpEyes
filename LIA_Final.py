@@ -26,7 +26,7 @@ def collect_signal(stri,N_sample,N_div,f):
 ############################################################################################
 
 
-f=200
+f=1000
 N_sample=8192
 N_div=128
 
@@ -44,9 +44,9 @@ for i in range(5):
 
     V_in_rms = np.sqrt(np.mean(np.square(V_in))) 
     V1.append(V_in_rms)
-    # print("The RMS of the input voltage is",V_in_rms,"V")
+    print("The RMS of the input voltage is",V_in_rms,"V")
     V_DC = LIA(V_out_opamp,t_out_opamp,f)
-    # print("The output voltage is",V_DC,"V")
+    print("The output voltage is",V_DC,"V")
     V_DC=V_DC/np.sqrt(2)
     V2.append(V_DC)
     print(i+1)
@@ -59,8 +59,9 @@ print("The RMS of the input voltage is",V_in_rms_avg,"V")
 print("The output voltage is",V_out_avg,"V")
 
 
-with open(f'D:\\Google_Drive\\Files\\My Drive\\Study_Stuff\\Semester-8\\Integrated_Laborotary_II\\Experiment_1_LockInAmplifier_using_Expeyes\\Codes_for_Expeyes\\Data\\MI_avg_dat_{f}Hz_fn.txt','a') as file:
+with open(f'D:\\Google_Drive\\Files\\My Drive\\Study_Stuff\\Semester-8\\Integrated_Laborotary_II\\Experiment_1_LockInAmplifier_using_Expeyes\\Codes_for_Expeyes\\Data\\MI_try_{f}Hz_fn.txt','a') as file:
     file.write(str(V_in_rms_avg)+"\t"+str(V_out_avg)+"\n")
+
 
 
 
