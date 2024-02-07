@@ -30,8 +30,8 @@ f=1000
 N_sample=8192
 N_div=128
 
-# p.set_sine_amp(2)
-# p.set_sine(f)
+p.set_sine_amp(2)
+p.set_sine(f)
 
 
 V1=[]
@@ -56,10 +56,10 @@ for i in range(5):
 V_out_avg=np.mean(V2)
 V_in_rms_avg=np.mean(V1)
 print("The RMS of the input voltage is",V_in_rms_avg,"V")
-print("The output voltage is",V_out_avg,"V")
+print("The RMS of the output voltage is",V_out_avg,"V")
 
 
-with open(f'D:\\Google_Drive\\Files\\My Drive\\Study_Stuff\\Semester-8\\Integrated_Laborotary_II\\Experiment_1_LockInAmplifier_using_Expeyes\\Codes_for_Expeyes\\Data\\MI_try_{f}Hz_fn.txt','a') as file:
+with open(f'D:\\Google_Drive\\Files\\My Drive\\Study_Stuff\\Semester-8\\Integrated_Laborotary_II\\Experiment_1_LockInAmplifier_using_Expeyes\\Codes_for_Expeyes\\Data\\LR_dat_{f}Hz_fn.txt','a') as file:
     file.write(str(V_in_rms_avg)+"\t"+str(V_out_avg)+"\n")
 
 
