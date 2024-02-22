@@ -23,42 +23,58 @@ def LIA(V_in,t_in,f):   #V_in is the input voltage, t_in is the time list (in S)
 #################### function to collect the signal from Expeyes ###########################
 def collect_signal(stri,N_sample,N_div,f):
         t_gap = (1/(f*N_div))*10**6 #us
-        t,v = p.capture1(stri,N_sample,t_gap)
+        t,v = p.capture1(stri,10000,2)
+        print('Time gap:',t_gap,'us')
         return t/1000,v
 ############################################################################################
 
 ############################# Defining input Parameters ####################################
-f=1000
+f=600
 N_sample=8192
 N_div=128
 p.set_sine_amp(2)
 p.set_sine(f)
-p.set_pv1(0.2)
+p.set_pv1(1)
 ############################################################################################
 vset=[0.25,0.5,0.75,1,1.25,1.5,1.75,2,2.25,2.5,2.75,3,3.25,3.5]
-vxlist=[]
-vylist=[]
+vxlist_sd=[]
+vylist_sd=[]
+
+vxlist_cc=[]
+vylist_cc=[]
+
+
+
+
+
+
+
 
 for i in vset:
     p.set_pv1(i)
-    tim.sleep(0.5)
+    tim.sleep(1)
     t,v=collect_signal('A2',N_sample,N_div,f)
     Vx,Vy=LIA(v,t,f)
-    vxlist.append(Vx)   
-    vylist.append(Vy)
+    vxlist_sd.append(Vx)   
+    vylist_sd.append(Vy)
+  
 
 
-with open('Data\\1000hz_sd.txt','w') as f:
+with open('Data\\solar_cc.txt','w') as f:
     for i in range(len(vset)):
-        f.write(str(vset[i])+'\t'+str(vxlist[i])+'\t'+str(vylist[i])+'\n')
+        f.write(str(vset[i])+'\t'+str(vxlist_sd[i])+'\t'+str(vylist_sd[i])+'\n')
     f.close()
 
 
-# t,v=collect_signal('A2',N_sample,N_div,f)
+# t1,v1=collect_signal('A2',N_sample,N_div,f)
+# t,v=collect_signal('A1',N_sample,N_div,f)
 # vout=LIA(v,t,f)
 # print(vout)
 
 # import matplotlib.pyplot as plt
-# plt.plot(t,v)
+# plt.plot(t1,v1,label='SD')
+# plt.plot(t,v,label='CC')
+# plt.legend()
+# plt.grid()
 # plt.xlim(0,0.01)
 # plt.show()
