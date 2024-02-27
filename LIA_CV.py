@@ -1,9 +1,11 @@
+############################################################################################
 import numpy as np
 import math as m
 from scipy.fft import fft, ifft,fftfreq
 import eyes17.eyes
 p=eyes17.eyes.open()
 import time as tim
+############################################################################################
 
 ################################ Lock in Amplifier ########################################
 def LIA(V_in,t_in,f):   #V_in is the input voltage, t_in is the time list (in S),
@@ -16,7 +18,6 @@ def LIA(V_in,t_in,f):   #V_in is the input voltage, t_in is the time list (in S)
     Vx=V_out_sin_fft[0].real/len(V_out_sin_fft)
     V_out_cos_fft=fft(V_in_cos)
     Vy=V_out_cos_fft[0].real/len(V_out_cos_fft)
-    # V_out= np.sqrt((V_out_sin_fft[0].real/len(V_out_sin_fft))**2+(V_out_cos_fft[0].real/len(V_out_cos_fft))**2)
     return Vx,Vy
 ############################################################################################
 
@@ -29,27 +30,18 @@ def collect_signal(stri,N_sample,N_div,f):
 ############################################################################################
 
 ############################# Defining input Parameters ####################################
-f=3000
+f=1000
 N_sample=8192
 N_div=128
 p.set_sine_amp(2)
 p.set_sine(f)
 p.set_pv1(1)
 ############################################################################################
-# vset=[0.25,0.75,1.25,1.75,2.25,2.75,3.25,3.5]
 
-# vset =[0.2,0.3,0.4,0.5,0.6,1.0,1.1,1.2,1.3,1.4,1.5,1.6,1.7,1.8,1.9,2,2.1]
-vset =[]
-for i in range(2,20):
-    vset.append(i/10)
-# vset =[0.75]
-# vset =[1.25]
-# vset =[1.75]
-# vset =[2.25]
-# vset =[2.75]
-# vset =[3.25]
-# vset =[3.5]
 
+################################## Input Voltages ##########################################
+vset =[0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0,1.1,1.2,1.3,1.4,1.5,1.6,1.7,1.8,1.9,2,2.1]
+############################################################################################
 
 j=0
 for i in vset:
@@ -57,16 +49,8 @@ for i in vset:
     tim.sleep(3)
     t,v=collect_signal('A1',N_sample,N_div,f)
     tim.sleep(3)
-    Vx,Vy=LIA(v,t,f)
+    Vx,Vy=LIA(v,t/1000,f)
     print(str(vset[j])+'\t'+str(Vx)+'\t'+str(Vy))
-    with open('Data\\CC.txt','a') as file1:
+    with open('Data\\SS.txt','a') as file1:
         file1.write(str(vset[j])+'\t'+str(Vx)+'\t'+str(Vy)+'\n')
     j=j+1
-
-
-
-# with open('Data\\CV_CC.txt','w') as file1:
-#     for i in range(len(vset)):
-#         file1.write(str(vset[i])+'\t'+str(vxlist_sd[i])+'\t'+str(vylist_sd[i])+'\n')
-#     file1.close()
-
