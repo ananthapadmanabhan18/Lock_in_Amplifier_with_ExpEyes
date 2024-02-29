@@ -43,4 +43,4 @@ V_out_rms = LIA(v2,t2,f)/np.sqrt(2)
 
 print(V_in_rms,V_out_rms)
 with open(f'Data\\Low_Resistance\\LR_{f}.txt','a') as file1:
-    file1.write(str(V_in_rms)+'\t'+str(V_out_rms)+'\n')
+    file1.write(str(round(V_in_rms,9))+'\t'+str(round(V_out_rms,9))+'\n')
