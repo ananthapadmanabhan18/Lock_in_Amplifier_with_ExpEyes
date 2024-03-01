@@ -21,6 +21,8 @@ Here we are using the ExpEYES/SEELab alond with its python interface/Library to 
 <li>The file LIA_LR.py containes the modified LIA for the specific case of the measurement of low resistance.</li>
 <li>The file LIA_CV.py containes the modified LIA for the specific case of the CV profiling of the Solar Cell. Here the function is modified so as to get the in-phase and the quadrature components of the required signal as it is needed to calculate the capacitance using the autophasing method</li>
 <li>The folder Data contains the data sets and results obtained for each of the above mentioned experiments.</li>
+<li>The two ipynb files containes the structure of the Lock in amplifier and its testinig with plots at each step</li>
+
 </ul>
 
 
