@@ -1,5 +1,5 @@
 
-<h1> __The below table is for the Monocrystalline Solar cell__ </h1>
+<h1> <b>The below table is for the Monocrystalline Solar cell</b> </h1>
 
 <table>
 <thead>
@@ -226,7 +226,7 @@
 
 
 
-<h1> __The below table is for the polycrystalline Solar cell__ </h1>
+<h1> <b>The below table is for the polycrystalline Solar cell</b> </h1>
 
 
 
