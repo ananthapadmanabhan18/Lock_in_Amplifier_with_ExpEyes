@@ -1,5 +1,5 @@
 # <h1> <b> Lock in Amplifier using ExpEYES/SEElab </b> </h1>
-<hr>
+
 This repository contains the works done by Anantha Padmanabhan and Parshathi S Mohan in the building of the Lock in amplifier using Expeyes/seelab. This is part of the course P442-Integrated laborotary (open lab) @ NISER.
 
 <h2> About Lock in Amplifier and Expeyes/SEELab </h2>
