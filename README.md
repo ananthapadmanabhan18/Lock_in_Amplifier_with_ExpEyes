@@ -10,7 +10,7 @@ ExpEYES (Experiments for Young Engineers and Scientists) is a hardware & softwar
 
 <h2> Experiments with SEELab/Expeyes </h2>
 
-Here we are using the ExpEYES/SEELab alond with its python interface/Library to build a low cost lock in amplifier. The main experiemnts done using this setup are its calibration, Measurement of Low Resistance, and CV profiling of the Solar Cell. 
+Here we are using the ExpEYES/SEELab along with its python interface/Library to build a low cost lock in amplifier. The main experiemnts done using this setup are its calibration, Measurement of Low Resistance, and CV profiling of the Solar Cell. 
 
 
 <h2> Repository Structure </h2>
