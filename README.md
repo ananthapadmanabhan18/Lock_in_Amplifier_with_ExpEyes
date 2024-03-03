@@ -28,21 +28,24 @@ Here we are using the ExpEYES/SEELab along with its python interface/Library to 
 <h2> Verifying plots of the working of Lock In Amplifier  </h2>
 
 The plot shown below is the working of the amplifier. The input signal is a 1kHz sine wave of 3V amplitude along with some noise which. The signal is completely generated in the python itself with random numbers. Here the virtual amplification is set to 10.
-
+<p style="text-align: center;">
 <img src="Amplified Plots//LIA_verify.png" alt="CV plot" height="300"><br>
-
+</p>
 
 The plot shown below is the working of the amplifier. The input signal is a 1kHz sine wave of 3V amplitude generated from the WG of the SEELab. Here the virtual amplification is set to 1.
-<div text-align = center;>
+<p style="text-align: center;">
 <img src="Amplified Plots//LIA_verify_real.png" alt="CV plot" height="325"><br>
-</div>
+</p>
 
 
 <h2> Sample CV plot obtained using the Lock in Amplifier  </h2>
 
 The below image shows the C-V plot of a Polycrystalline Solar Cell obtained from the lock in amplifier.
+<p style="text-align: center;">
 <img src="Data/CV/mono.png" alt="CV plot" height="300"><br>
-
+</p>
 
 The below image shows the same C-V plot but of a Monocrystalline Solar Cell.
+<p style="text-align: center;">
 <img src="Data/CV/poly.png" alt="CV plot" height="300">
+</p>
