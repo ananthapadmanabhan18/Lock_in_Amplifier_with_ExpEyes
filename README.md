@@ -1,12 +1,12 @@
 # <h1> <b> Lock in Amplifier using ExpEYES/SEElab </b> </h1>
-<hr>
+
 This repository contains the works done by Anantha Padmanabhan and Parshathi S Mohan in the building of the Lock in amplifier using Expeyes/seelab. This is part of the course P442-Integrated laborotary (open lab) @ NISER.
 
 <h2> About Lock in Amplifier and Expeyes/SEELab </h2>
 
 The lock-in amplifier is a type of amplifier that can extract a signal with a known carrier wave from an extremely noisy environment. It is able to recover signals with a very low signal-to-noise ratio. The lock-in amplifier is able to do this by using a reference signal to recover the signal of interest. The reference signal is used to modulate the signal of interest. The lock-in amplifier then uses a technique called phase-sensitive detection to recover the signal of interest.
 
-ExpEYES (Experiments for Young Engineers and Scientists) is a hardware & software framework for developing science experiments. It is developed by the Inter-University Accelerator Centre, New Delhi. It is a hardware and software framework for developing science experiments. It is designed to lower the cost of laboratory equipment for educational institutions. It is a small, open source, and low-cost data acquisition and control device, which can be used for performing experiments in physics, chemistry, and biology. It is a small, open source, and low-cost data acquisition and control device, which can be used for performing experiments in physics, chemistry, and biology. It is a small, open source, and low-cost data acquisition and control device, which can be used for performing experiments in physics, chemistry, and biology.
+ExpEYES (Experiments for Young Engineers and Scientists) is a hardware & software framework for developing science experiments. It is developed by the Inter-University Accelerator Centre, New Delhi. It is a hardware and software framework for developing science experiments. It is designed to lower the cost of laboratory equipment for educational institutions. It is a small, open source, and low-cost data acquisition and control device, which can be used for performing experiments in physics, chemistry, and biology.
 
 <h2> Experiments with SEELab/Expeyes </h2>
 
